@@ -1,0 +1,132 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "myfactory456"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureSqlDatabase2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase2'"
+		},
+		"sourcedatalake12_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'sourcedatalake12'"
+		},
+		"targetdwhdataflow_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'targetdwhdataflow'"
+		},
+		"targetsqldb12_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'targetsqldb12'"
+		},
+		"third_user_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'third_user'"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://Mykey45.vault.azure.net/"
+		},
+		"db1_azurekeyvalult_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "dbsec"
+		},
+		"sourcedatalake12_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adfdatalake123.dfs.core.windows.net/"
+		},
+		"targetdwhdataflow_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adfdatalake123.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "myfactory456_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureSqlDatabase2_connectionString": {
+						"value": "[parameters('AzureSqlDatabase2_connectionString')]"
+					},
+					"sourcedatalake12_accountKey": {
+						"value": "[parameters('sourcedatalake12_accountKey')]"
+					},
+					"targetdwhdataflow_accountKey": {
+						"value": "[parameters('targetdwhdataflow_accountKey')]"
+					},
+					"targetsqldb12_connectionString": {
+						"value": "[parameters('targetsqldb12_connectionString')]"
+					},
+					"third_user_connectionString": {
+						"value": "[parameters('third_user_connectionString')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"sourcedatalake12_properties_typeProperties_url": {
+						"value": "[parameters('sourcedatalake12_properties_typeProperties_url')]"
+					},
+					"targetdwhdataflow_properties_typeProperties_url": {
+						"value": "[parameters('targetdwhdataflow_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "myfactory456_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"db1_azurekeyvalult_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('db1_azurekeyvalult_properties_typeProperties_connectionString_secretName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'myfactory456_ArmTemplate_0')]"
+			]
+		}
+	]
+}
