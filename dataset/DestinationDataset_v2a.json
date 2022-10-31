@@ -1,0 +1,41 @@
+{
+	"name": "DestinationDataset_v2a",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "targetsqldb12",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "empid",
+				"type": "int",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "ename",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "salary",
+				"type": "int",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "deptid",
+				"type": "int",
+				"precision": 10,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "emp"
+		}
+	}
+}
