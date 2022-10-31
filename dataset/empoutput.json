@@ -1,0 +1,40 @@
+{
+	"name": "empoutput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "empoutput.csv",
+				"container": "output"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "empid",
+				"type": "String"
+			},
+			{
+				"name": "ename",
+				"type": "String"
+			},
+			{
+				"name": "salary",
+				"type": "String"
+			},
+			{
+				"name": "deptid",
+				"type": "String"
+			}
+		]
+	}
+}
