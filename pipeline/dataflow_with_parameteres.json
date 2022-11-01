@@ -35,8 +35,7 @@
 		],
 		"parameters": {
 			"price": {
-				"type": "int",
-				"defaultValue": 600
+				"type": "int"
 			}
 		},
 		"annotations": [],
