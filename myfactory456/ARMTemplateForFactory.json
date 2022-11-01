@@ -61,7 +61,7 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/MetadataDrivenCopyTask_ek1_BottomLevel')]",
+			"name": "[concat(parameters('factoryName'), '/Metadataemp_r6w_BottomLevel')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -163,7 +163,7 @@
 														},
 														"inputs": [
 															{
-																"referenceName": "MetadataDrivenCopyTask_ek1_SourceDS",
+																"referenceName": "Metadataemp_r6w_SourceDS",
 																"type": "DatasetReference",
 																"parameters": {
 																	"cw_schema": {
@@ -179,7 +179,7 @@
 														],
 														"outputs": [
 															{
-																"referenceName": "MetadataDrivenCopyTask_ek1_DestinationDS",
+																"referenceName": "Metadataemp_r6w_DestinationDS",
 																"type": "DatasetReference",
 																"parameters": {
 																	"cw_schema": {
@@ -222,7 +222,7 @@
 																"partitionOption": "None"
 															},
 															"dataset": {
-																"referenceName": "MetadataDrivenCopyTask_ek1_SourceDS",
+																"referenceName": "Metadataemp_r6w_SourceDS",
 																"type": "DatasetReference",
 																"parameters": {
 																	"cw_schema": {
@@ -313,7 +313,7 @@
 														},
 														"inputs": [
 															{
-																"referenceName": "MetadataDrivenCopyTask_ek1_SourceDS",
+																"referenceName": "Metadataemp_r6w_SourceDS",
 																"type": "DatasetReference",
 																"parameters": {
 																	"cw_schema": {
@@ -329,7 +329,7 @@
 														],
 														"outputs": [
 															{
-																"referenceName": "MetadataDrivenCopyTask_ek1_DestinationDS",
+																"referenceName": "Metadataemp_r6w_DestinationDS",
 																"type": "DatasetReference",
 																"parameters": {
 																	"cw_schema": {
@@ -364,7 +364,7 @@
 														},
 														"userProperties": [],
 														"typeProperties": {
-															"storedProcedureName": "[[UpdateWatermarkColumnValue_ek1]",
+															"storedProcedureName": "[[UpdateWatermarkColumnValue_r6w]",
 															"storedProcedureParameters": {
 																"Id": {
 																	"value": {
@@ -460,7 +460,7 @@
 												},
 												"inputs": [
 													{
-														"referenceName": "MetadataDrivenCopyTask_ek1_SourceDS",
+														"referenceName": "Metadataemp_r6w_SourceDS",
 														"type": "DatasetReference",
 														"parameters": {
 															"cw_schema": {
@@ -476,7 +476,7 @@
 												],
 												"outputs": [
 													{
-														"referenceName": "MetadataDrivenCopyTask_ek1_DestinationDS",
+														"referenceName": "Metadataemp_r6w_DestinationDS",
 														"type": "DatasetReference",
 														"parameters": {
 															"cw_schema": {
@@ -508,18 +508,18 @@
 					}
 				},
 				"folder": {
-					"name": "MetadataDrivenCopyTask_ek1_20221031"
+					"name": "Metadataemp_r6w_20221101"
 				},
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/MetadataDrivenCopyTask_ek1_SourceDS')]",
-				"[concat(variables('factoryId'), '/datasets/MetadataDrivenCopyTask_ek1_DestinationDS')]",
+				"[concat(variables('factoryId'), '/datasets/Metadataemp_r6w_SourceDS')]",
+				"[concat(variables('factoryId'), '/datasets/Metadataemp_r6w_DestinationDS')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase2')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/MetadataDrivenCopyTask_ek1_MiddleLevel')]",
+			"name": "[concat(parameters('factoryName'), '/Metadataemp_r6w_MiddleLevel')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -562,7 +562,7 @@
 											"partitionOption": "None"
 										},
 										"dataset": {
-											"referenceName": "MetadataDrivenCopyTask_ek1_ControlDS",
+											"referenceName": "Metadataemp_r6w_ControlDS",
 											"type": "DatasetReference",
 											"parameters": {}
 										},
@@ -584,7 +584,7 @@
 									"userProperties": [],
 									"typeProperties": {
 										"pipeline": {
-											"referenceName": "MetadataDrivenCopyTask_ek1_BottomLevel",
+											"referenceName": "Metadataemp_r6w_BottomLevel",
 											"type": "PipelineReference"
 										},
 										"waitOnCompletion": true,
@@ -628,17 +628,17 @@
 					}
 				},
 				"folder": {
-					"name": "MetadataDrivenCopyTask_ek1_20221031"
+					"name": "Metadataemp_r6w_20221101"
 				},
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/MetadataDrivenCopyTask_ek1_ControlDS')]",
-				"[concat(variables('factoryId'), '/pipelines/MetadataDrivenCopyTask_ek1_BottomLevel')]"
+				"[concat(variables('factoryId'), '/datasets/Metadataemp_r6w_ControlDS')]",
+				"[concat(variables('factoryId'), '/pipelines/Metadataemp_r6w_BottomLevel')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/MetadataDrivenCopyTask_ek1_TopLevel')]",
+			"name": "[concat(parameters('factoryName'), '/Metadataemp_r6w_TopLevel')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -667,7 +667,7 @@
 								"partitionOption": "None"
 							},
 							"dataset": {
-								"referenceName": "MetadataDrivenCopyTask_ek1_ControlDS",
+								"referenceName": "Metadataemp_r6w_ControlDS",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -701,7 +701,7 @@
 									"userProperties": [],
 									"typeProperties": {
 										"pipeline": {
-											"referenceName": "MetadataDrivenCopyTask_ek1_MiddleLevel",
+											"referenceName": "Metadataemp_r6w_MiddleLevel",
 											"type": "PipelineReference"
 										},
 										"waitOnCompletion": true,
@@ -756,19 +756,19 @@
 					},
 					"MainControlTableName": {
 						"type": "String",
-						"defaultValue": "MainControlTable_ek1"
+						"defaultValue": "MainControlTable_r6w"
 					}
 				},
 				"folder": {
-					"name": "MetadataDrivenCopyTask_ek1_20221031"
+					"name": "Metadataemp_r6w_20221101"
 				},
 				"annotations": [
 					"MetadataDrivenSolution"
 				]
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/MetadataDrivenCopyTask_ek1_ControlDS')]",
-				"[concat(variables('factoryId'), '/pipelines/MetadataDrivenCopyTask_ek1_MiddleLevel')]"
+				"[concat(variables('factoryId'), '/datasets/Metadataemp_r6w_ControlDS')]",
+				"[concat(variables('factoryId'), '/pipelines/Metadataemp_r6w_MiddleLevel')]"
 			]
 		},
 		{
@@ -1496,7 +1496,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/MetadataDrivenCopyTask_ek1_ControlDS')]",
+			"name": "[concat(parameters('factoryName'), '/Metadataemp_r6w_ControlDS')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -1505,13 +1505,13 @@
 					"type": "LinkedServiceReference"
 				},
 				"folder": {
-					"name": "MetadataDrivenCopyTask_ek1_20221031"
+					"name": "Metadataemp_r6w_20221101"
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
-					"table": "MainControlTable_ek1"
+					"table": "MainControlTable_r6w"
 				}
 			},
 			"dependsOn": [
@@ -1519,7 +1519,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/MetadataDrivenCopyTask_ek1_DestinationDS')]",
+			"name": "[concat(parameters('factoryName'), '/Metadataemp_r6w_DestinationDS')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -1536,7 +1536,7 @@
 					}
 				},
 				"folder": {
-					"name": "MetadataDrivenCopyTask_ek1_20221031"
+					"name": "Metadataemp_r6w_20221101"
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
@@ -1557,7 +1557,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/MetadataDrivenCopyTask_ek1_SourceDS')]",
+			"name": "[concat(parameters('factoryName'), '/Metadataemp_r6w_SourceDS')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -1574,205 +1574,7 @@
 					}
 				},
 				"folder": {
-					"name": "MetadataDrivenCopyTask_ek1_20221031"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": {
-						"value": "@dataset().cw_schema",
-						"type": "Expression"
-					},
-					"table": {
-						"value": "@dataset().cw_table",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/targetsqldb12')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/MetadataDrivenCopyTask_l21_ControlDS')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase2",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "MetadataDrivenCopyTask_l21_20221031"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {
-					"table": "MainControlTable_l21"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase2')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/MetadataDrivenCopyTask_l21_DestinationDS')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "targetsqldb12",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_schema": {
-						"type": "String"
-					},
-					"cw_table": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "MetadataDrivenCopyTask_l21_20221031"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": {
-						"value": "@dataset().cw_schema",
-						"type": "Expression"
-					},
-					"table": {
-						"value": "@dataset().cw_table",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/targetsqldb12')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/MetadataDrivenCopyTask_l21_SourceDS')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "targetsqldb12",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_schema": {
-						"type": "String"
-					},
-					"cw_table": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "MetadataDrivenCopyTask_l21_20221031"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": {
-						"value": "@dataset().cw_schema",
-						"type": "Expression"
-					},
-					"table": {
-						"value": "@dataset().cw_table",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/targetsqldb12')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/MetadataDrivenCopyTask_nt9_ControlDS')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase2",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "MetadataDrivenCopyTask_nt9_20221010"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {
-					"table": "MainControlTable_nt9"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase2')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/MetadataDrivenCopyTask_nt9_DestinationDS')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase2",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_schema": {
-						"type": "String"
-					},
-					"cw_table": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "MetadataDrivenCopyTask_nt9_20221010"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": {
-						"value": "@dataset().cw_schema",
-						"type": "Expression"
-					},
-					"table": {
-						"value": "@dataset().cw_table",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase2')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/MetadataDrivenCopyTask_nt9_SourceDS')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "targetsqldb12",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"cw_schema": {
-						"type": "String"
-					},
-					"cw_table": {
-						"type": "String"
-					}
-				},
-				"folder": {
-					"name": "MetadataDrivenCopyTask_nt9_20221010"
+					"name": "Metadataemp_r6w_20221101"
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
